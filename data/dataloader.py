@@ -3,7 +3,7 @@ from torchvision import transforms
 from torch.utils.data import Dataset, DataLoader
 from PIL import Image
 
-root = r"C:\Users\hq\Desktop\HoldingObject"
+root = "UCMerced_LandUse"
 
 # 自定义图片图片读取方式，可以自行增加resize、数据增强等操作
 def MyLoader(path):
@@ -36,8 +36,8 @@ class MyDataset (Dataset):
         return len(self.imgs)
 
 
-train_data = MyDataset(txt=root + '\\' + 'train.txt', transform=transforms.ToTensor())
-test_data = MyDataset(txt=root + '\\' + 'test.txt', transform=transforms.ToTensor())
+train_data = MyDataset(txt=root + '/' + 'train.txt', transform=transforms.ToTensor())
+test_data = MyDataset(txt=root + '/' + 'test.txt', transform=transforms.ToTensor())
 
 #train_data 和test_data包含多有的训练与测试数据，调用DataLoader批量加载
 train_loader = DataLoader(dataset=train_data, batch_size=64, shuffle=True)
