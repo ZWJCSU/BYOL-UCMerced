@@ -5,6 +5,7 @@ import yaml
 from torchvision import datasets
 from data.multi_view_data_injector import MultiViewDataInjector
 from data.transforms import get_simclr_data_transforms
+import data.dataloader
 from models.mlp_head import MLPHead
 from models.resnet_base_network import ResNet18
 from trainer import BYOLTrainer
