@@ -40,7 +40,7 @@ train_data = MyDataset(txt=root + '/' + 'train.txt', transform=transforms.ToTens
 test_data = MyDataset(txt=root + '/' + 'test.txt', transform=transforms.ToTensor())
 
 #train_data 和test_data包含多有的训练与测试数据，调用DataLoader批量加载
-train_loader = DataLoader(dataset=train_data, batch_size=64, shuffle=True)
-test_loader = DataLoader(dataset=test_data, batch_size=64)
+train_loader = DataLoader(dataset=train_data, batch_size=32, shuffle=True)
+test_loader = DataLoader(dataset=test_data, batch_size=32)
 
 print('加载成功！')
