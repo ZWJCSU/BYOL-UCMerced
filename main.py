@@ -5,7 +5,7 @@ import yaml
 from torchvision import datasets
 from data.multi_view_data_injector import MultiViewDataInjector
 from data.transforms import get_simclr_data_transforms
-import data.dataloader
+from data.dataloader import MyDataset
 from models.mlp_head import MLPHead
 from models.resnet_base_network import ResNet18
 from trainer import BYOLTrainer
@@ -21,7 +21,7 @@ def main():
     print(f"Training with: {device}")
 
     data_transform = get_simclr_data_transforms(**config['data_transforms'])
-
+    train_dataset = MyDataset(txt=root + '/' + 'train.txt', transform=MultiViewDataInjector([data_transform, data_transform]))
 #     train_dataset = datasets.STL10('/home/thalles/Downloads/', split='train+unlabeled', download=True,
 #                                    transform=MultiViewDataInjector([data_transform, data_transform]))
 
