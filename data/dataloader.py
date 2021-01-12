@@ -3,7 +3,7 @@ from torchvision import transforms
 from torch.utils.data import Dataset, DataLoader
 from PIL import Image
 
-root = "UCMerced_LandUse"
+root = "UCMerced_LandUse/Images"
 
 # 自定义图片图片读取方式，可以自行增加resize、数据增强等操作
 def MyLoader(path):
