@@ -34,7 +34,7 @@ from data.transforms import get_simclr_data_transforms
 from data.dataloader import MyDataset
 from models.mlp_head import MLPHead
 from models.resnet_base_network import ResNet18
-from trainer import BYOLTrainer
+
 
 
 
