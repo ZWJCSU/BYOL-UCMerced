@@ -32,10 +32,10 @@ def main():
     # load pre-trained model if defined
     if pretrained_folder:
         try:
-            checkpoints_folder = os.path.join('./runs', pretrained_folder, 'checkpoints')
+#            checkpoints_folder = os.path.join('./runs', pretrained_folder, 'checkpoints')
 
             # load pre-trained parameters
-            load_params = torch.load(os.path.join(os.path.join(checkpoints_folder, 'model.pth')),
+            load_params = torch.load(os.path.join(os.path.join('checkpoints', 'model.pth')),
                                      map_location=torch.device(torch.device(device)))
 
             online_network.load_state_dict(load_params['online_network_state_dict'])
