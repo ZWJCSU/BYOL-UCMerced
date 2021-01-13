@@ -4,7 +4,7 @@ import torch.nn.functional as F
 import torchvision
 from torch.utils.data.dataloader import DataLoader
 from torch.utils.tensorboard import SummaryWriter
-
+import test_acc
 from utils import _create_model_training_folder
 
 
@@ -76,11 +76,12 @@ class BYOLTrainer:
 
                 self._update_target_network_parameters()  # update the key encoder
                 niter += 1
-
+            # save checkpoints
+            self.save_model(os.path.join('checkpoints', 'model.pth'))
+            acc=test_acc.get_acc()
             print("End of epoch {}".format(epoch_counter))
 
-        # save checkpoints
-        self.save_model(os.path.join(model_checkpoints_folder, 'model.pth'))
+        
 
     def update(self, batch_view_1, batch_view_2):
         # compute query feature
