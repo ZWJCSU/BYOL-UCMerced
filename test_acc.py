@@ -83,7 +83,7 @@ def create_data_loaders_from_arrays(X_train, y_train, X_test, y_test):
 
 
 
-def get_acc()：
+def get_acc():
  batch_size = 8
  data_transforms = torchvision.transforms.Compose([transforms.ToTensor()])
 
