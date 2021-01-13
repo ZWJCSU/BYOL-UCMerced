@@ -21,7 +21,7 @@ def main():
     print(f"Training with: {device}")
 
     data_transform = get_simclr_data_transforms(**config['data_transforms'])
-    train_dataset = MyDataset(txt='UCMerced_LandUse/Images' + '/' + 'train.txt', transform=MultiViewDataInjector([data_transform, data_transform]))
+    train_dataset = MyDataset(txt='data/UCMerced_LandUse/Images' + '/' + 'train.txt', transform=MultiViewDataInjector([data_transform, data_transform]))
 #     train_dataset = datasets.STL10('/home/thalles/Downloads/', split='train+unlabeled', download=True,
 #                                    transform=MultiViewDataInjector([data_transform, data_transform]))
 
