@@ -22,7 +22,7 @@ $ python main.py
 The Logistic Regression evaluation file is in eval/
 ![file list](img/test.png)
 
-```
+
 
 
 
