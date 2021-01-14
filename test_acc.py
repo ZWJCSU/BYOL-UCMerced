@@ -165,8 +165,8 @@ def get_acc():
     
     
     if epoch % eval_every_n_epochs == 0:
-        train_total=0,total = 0
-        train_correct=0,correct = 0
+        train_total,total = 0,0
+        train_correct,correct = 0,0
         for x, y in train_loader:
             x = x.to(device)
             y = y.to(device)
