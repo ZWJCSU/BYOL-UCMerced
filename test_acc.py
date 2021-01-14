@@ -163,8 +163,9 @@ def get_acc():
         loss.backward()
         optimizer.step()
     
-    train_total=0,total = 0
+    
     if epoch % eval_every_n_epochs == 0:
+        train_total=0,total = 0
         train_correct=0,correct = 0
         for x, y in train_loader:
             x = x.to(device)
