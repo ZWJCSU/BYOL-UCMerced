@@ -20,7 +20,8 @@ $ python main.py
 
 ## Result
 The Logistic Regression evaluation file is in eval/
-
+I update results every 40 epochs
+![file list](img/result.png)
 
 
 
