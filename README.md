@@ -19,8 +19,9 @@ $ python main.py
 ![file list](img/file.png)
 
 ## Result
-The Logistic Regression evaluation file is in eval/
-I update results every 40 epochs
+The Logistic Regression evaluation file is in eval/BYOL_UCMerced.ipynb
+I update results every 40 epochs and save the model in checkpoints/model.pth
+This is after I train for 80 epochs model's accuray
 ![file list](img/result.png)
 
 
@@ -32,7 +33,7 @@ I update results every 40 epochs
 
 We measure the quality of the learned representations by linear separability.
 
-During training, BYOL learns features using the STL10 ```train+unsupervised``` set and evaluates in the held-out ```test``` set.
+During training, BYOL learns features using the UCMerced ```train+unsupervised``` set and evaluates in the held-out ```test``` set.
 
 |       Linear Classifier      | Feature  Extractor | Architecture | Feature dim | Projection Head  dim | Epochs | Batch  Size | Classification-accuracy |
 |:----------------------------:|:------------------:|:------------:|:-----------:|:--------------------:|:------:|:-----------:|:-----------:|
