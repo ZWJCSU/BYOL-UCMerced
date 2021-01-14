@@ -163,9 +163,18 @@ def get_acc():
         loss.backward()
         optimizer.step()
     
-    total = 0
+    train_total=0,total = 0
     if epoch % eval_every_n_epochs == 0:
-        correct = 0
+        train_correct=0,correct = 0
+        for x, y in train_loader:
+            x = x.to(device)
+            y = y.to(device)
+
+            logits = logreg(x)
+            predictions = torch.argmax(logits, dim=1)
+            
+            train_total += y.size(0)
+            train_correct += (predictions == y).sum().item()
         for x, y in test_loader:
             x = x.to(device)
             y = y.to(device)
@@ -175,7 +184,8 @@ def get_acc():
             
             total += y.size(0)
             correct += (predictions == y).sum().item()
-            
+        train_acc=  train_correct / train_total 
         acc =  correct / total
+        print(f"Training accuracy: {np.mean(train_acc)}")
         print(f"Testing accuracy: {np.mean(acc)}")
 
